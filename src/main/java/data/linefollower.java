@@ -6,12 +6,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Linefollower {
+public class linefollower {
  
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int motorc;
-	public int motord;
+	private int motorc;
+	private int motord;
+	private int id;
+	
+	public String toString() {
+		return  id+": "+motorc+" "+motord;
+	}
+	public linefollower() {
+		super();
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getMotorc() {
 		return motorc;
 	}
@@ -24,8 +38,9 @@ public class Linefollower {
 	public void setMotord(int motord) {
 		this.motord = motord;
 	}
-	public Linefollower(int motorc, int motord) {
+	public linefollower(int motorc, int motord, int id) {
 		super();
+		this.id=id;
 		this.motorc = motorc;
 		this.motord = motord;
 	}

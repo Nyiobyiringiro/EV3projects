@@ -6,15 +6,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Sensors {
+public class sensors {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int sec_distance;
-	public int linecolor;
+	private int sec_distance;
+	private float linecolor;
+	private int id;
 	
-	public Sensors(int sec_distance, int linecolor) {
+	public sensors() {
 		super();
+		
+	}
+	public sensors( int id, int sec_distance, float linecolor) {
+		super();
+		this.setId(id);
 		this.sec_distance = sec_distance;
 		this.linecolor = linecolor;
 	}
@@ -24,11 +30,17 @@ public class Sensors {
 	public void setSec_distance(int sec_distance) {
 		this.sec_distance = sec_distance;
 	}
-	public int getLinecolor() {
+	public float getLinecolor() {
 		return linecolor;
 	}
 	public void setLinecolor(int linecolor) {
 		this.linecolor = linecolor;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }
