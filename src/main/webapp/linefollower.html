@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/rest/robot18services/linefollower" method="post">
+	MotorC:<input type='number' name='motorc' value=''><br>
+	MotorD: <input type='number' name='motorc' value=''><br>
+    <input type='submit' name='ok' value='Send'>
+	</form><br>
+	
+	<br><p> if set these qualities if the obstacle is detected</p><br>
+	<form action="/rest/robot18services/obstacledetected" method="post">
+	MotorC:<input type='number' name='motorc' value=''><br>
+	MotorD: <input type='number' name='motorc' value=''><br>
+	Delay:<input type='number' name='delay' value=''><br>
+	cycle: <input type='number' name='cycle' value=''><br>
+	<input type='submit' name='ok' value='Send'>
+	</form>
+	
+	<br><p> if set these qualities for the sensors</p><br>
+	<form action="/rest/robot18services/sensors" method="post">
+	Security distance:<input type='number' name='sec_distance' value=''><br>
+	Line Color: <input type='number' name='linecolor' value=''><br>
+	<input type='submit' name='ok' value='Send'>
+	</form>
+ </body>
+</html>
