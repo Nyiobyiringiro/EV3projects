@@ -10,9 +10,10 @@ public class linefollower {
  
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 	private int motorc;
 	private int motord;
-	private int id;
+	
 	
 	public String toString() {
 		return  id+": "+motorc+" "+motord;
@@ -20,6 +21,7 @@ public class linefollower {
 	public linefollower() {
 		super();
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -41,6 +43,11 @@ public class linefollower {
 	public linefollower(int motorc, int motord, int id) {
 		super();
 		this.id=id;
+		this.motorc = motorc;
+		this.motord = motord;
+	}
+	public linefollower(int motorc, int motord) {
+		super();
 		this.motorc = motorc;
 		this.motord = motord;
 	}
