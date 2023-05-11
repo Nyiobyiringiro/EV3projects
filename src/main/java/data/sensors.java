@@ -10,19 +10,25 @@ public class sensors {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 	private int sec_distance;
 	private float linecolor;
-	private int id;
 	
 	public sensors() {
 		super();
 		
 	}
-	public sensors( int id, int sec_distance, float linecolor) {
+	public sensors(int id, int sec_distance, float linecolor) {
 		super();
-		this.setId(id);
+		this.id = id;
 		this.sec_distance = sec_distance;
 		this.linecolor = linecolor;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public int getSec_distance() {
 		return sec_distance;
@@ -33,14 +39,14 @@ public class sensors {
 	public float getLinecolor() {
 		return linecolor;
 	}
-	public void setLinecolor(int linecolor) {
+	public void setLinecolor(float linecolor) {
 		this.linecolor = linecolor;
 	}
-	public int getId() {
-		return id;
+	@Override
+	public String toString() {
+		return "sensors [id=" + id + ", sec_distance=" + sec_distance + ", linecolor=" + linecolor + "]";
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
+	
 	
 }
