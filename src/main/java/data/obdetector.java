@@ -28,6 +28,9 @@ public obdetector(int id, int distance, Timestamp time) {
 	this.distance = distance;
 	this.time = time;
 }
+public obdetector(int distance) {
+	this.distance=distance;
+}
 public int getId() {
 	return id;
 }

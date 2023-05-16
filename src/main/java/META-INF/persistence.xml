@@ -4,6 +4,9 @@
 	<class>data.linefollower</class>
 	<class>data.obstacledetected</class>
 	<class>data.sensors</class>
+	<class>data.obdetector</class>
+	<class>data.codetector</class>
+	<class>data.speeds</class>
 <!-- If using MySQL 5.7 or newer -->
 <!--  
 	as a root user in the MySQL command prompt give the commands:
