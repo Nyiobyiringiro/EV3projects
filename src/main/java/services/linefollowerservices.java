@@ -26,27 +26,29 @@ public class linefollowerservices {
 		linefollower obj=new linefollower(id, motorc, motord);
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(obj);
+//		em.persist(obj);
+		em.merge(obj);
 		em.getTransaction().commit();
 		return obj;
 	}
 	@GET
-	@Path("/getmotorc/{id}")
+	@Path("/getmotorc")
 	@Produces(MediaType.TEXT_PLAIN)
-	public  int motorc(@PathParam("id")int id) {
+	public  String motorc() {
 	    // And then EntityManager, which can manage the entities.
 	    EntityManager em = emf.createEntityManager();
 	    
 	    // Retrieve the Prey with the specified ID
-	    linefollower motorc = em.find(linefollower.class,id);
+	    linefollower linefollower = em.find(linefollower.class,1);
 	    
 	    // Close the EntityManager and EntityManagerFactory
 	    em.close();
 	    emf.close();
 	    
 	    
-	   return motorc.getMotorc();
+	   return linefollower.toString();
 	}
+	//getting the value of motord only
 	@GET
 	@Path("/getmotord/{id}")
 	@Produces(MediaType.TEXT_PLAIN)

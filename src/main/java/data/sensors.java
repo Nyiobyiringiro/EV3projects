@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class sensors {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private int sec_distance;
 	private float linecolor;
@@ -21,6 +21,11 @@ public class sensors {
 	public sensors(int id, int sec_distance, float linecolor) {
 		super();
 		this.id = id;
+		this.sec_distance = sec_distance;
+		this.linecolor = linecolor;
+	}
+	public sensors(int sec_distance, float linecolor) {
+		
 		this.sec_distance = sec_distance;
 		this.linecolor = linecolor;
 	}
@@ -42,11 +47,10 @@ public class sensors {
 	public void setLinecolor(float linecolor) {
 		this.linecolor = linecolor;
 	}
-	@Override
-	public String toString() {
+	public  String toString() {
 		return "sensors [id=" + id + ", sec_distance=" + sec_distance + ", linecolor=" + linecolor + "]";
 	}
 	
 	
-	
+	// create table sensors(id int not null primary key, sec_distance int not null, linecolor float not null);
 }

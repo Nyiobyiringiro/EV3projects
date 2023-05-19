@@ -19,15 +19,15 @@ public class Statistics {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("robot18");
 	
 	@GET
-	@Path("/addobstacle/{id}/{distance}")
+	@Path("/getdistance/{distance}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public obdetector getDistance(@PathParam("distance") int distance,@PathParam("id") int id) {
+	public obdetector getDistance(@PathParam("distance") int distance) {
 		//set time to the current time and date
 		Date currentDate = new Date();
 	    Timestamp time = new Timestamp(currentDate.getTime());
 	    //newObstacle.setTime(time);
 		
-	    obdetector newObstacle=new obdetector(id,distance,time);
+	    obdetector newObstacle=new obdetector(distance,time);
 	    EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(newObstacle);
@@ -37,9 +37,9 @@ public class Statistics {
 	
 	//sending the value of the color from the robot to the database
 	@GET
-	@Path("/getcolor/{id}/{decolor}")
+	@Path("/getcolor/{decolor}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public codetector getColor(@PathParam("decolor") float decolor,@PathParam("id") int id) {
+	public codetector getColor(@PathParam("decolor") float decolor) {
 		//set time to the current time and date
 		Date currentDate = new Date();
 	    Timestamp time = new Timestamp(currentDate.getTime());
@@ -47,7 +47,7 @@ public class Statistics {
 	    String color;
 		if(decolor>=0.5) {
 			color="black";
-			 codetector newObstacle=new codetector(id,color,time);
+			 codetector newObstacle=new codetector(color,time);
 			    EntityManager em=emf.createEntityManager();
 				em.getTransaction().begin();
 				em.persist(newObstacle);
@@ -56,7 +56,7 @@ public class Statistics {
 		} 
 		else {
 			color="White";
-			 codetector newObstacle=new codetector(id,color,time);
+			 codetector newObstacle=new codetector(color,time);
 			    EntityManager em=emf.createEntityManager();
 				em.getTransaction().begin();
 				em.persist(newObstacle);
@@ -67,20 +67,5 @@ public class Statistics {
 	   
 	
 	}
-//	@GET
-//	@Path("/addobstacle/{id}/{distance}")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public obdetector getDistance(@PathParam("distance") int distance,@PathParam("id") int id) {
-//		//set time to the current time and date
-//		Date currentDate = new Date();
-//	    Timestamp time = new Timestamp(currentDate.getTime());
-//	    //newObstacle.setTime(time);
-//		
-//	    obdetector newObstacle=new obdetector(id,distance,time);
-//	    EntityManager em=emf.createEntityManager();
-//		em.getTransaction().begin();
-//		em.persist(newObstacle);
-//		em.getTransaction().commit();
-//		return newObstacle;
-//	}
+
 }

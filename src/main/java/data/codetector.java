@@ -46,4 +46,8 @@ public class codetector {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public codetector(String color, Timestamp time) {
+		this.color = color;
+		this.time = time;
+	}
 }

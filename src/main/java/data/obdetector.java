@@ -31,6 +31,11 @@ public obdetector(int id, int distance, Timestamp time) {
 public obdetector(int distance) {
 	this.distance=distance;
 }
+public obdetector(int distance, Timestamp time) {
+	// TODO Auto-generated constructor stub
+	this.distance = distance;
+	this.time = time;
+}
 public int getId() {
 	return id;
 }

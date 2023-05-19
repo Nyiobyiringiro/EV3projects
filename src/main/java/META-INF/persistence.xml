@@ -7,6 +7,7 @@
 	<class>data.obdetector</class>
 	<class>data.codetector</class>
 	<class>data.speeds</class>
+	<class>data.functions</class>
 <!-- If using MySQL 5.7 or newer -->
 <!--  
 	as a root user in the MySQL command prompt give the commands:
